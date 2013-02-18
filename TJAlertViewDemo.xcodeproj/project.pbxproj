@@ -1,0 +1,359 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E932E29816CBCE89001D70F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E932E29716CBCE89001D70F9 /* UIKit.framework */; };
+		E932E29A16CBCE89001D70F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E932E29916CBCE89001D70F9 /* Foundation.framework */; };
+		E932E29C16CBCE89001D70F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E932E29B16CBCE89001D70F9 /* CoreGraphics.framework */; };
+		E98F8CDD16D1D92A00718798 /* TJAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = E98F8CDB16D1D92A00718798 /* TJAlertView.m */; };
+		E98F8CFD16D1DAB100718798 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E98F8CF816D1DAB100718798 /* AppDelegate.m */; };
+		E98F8CFE16D1DAB100718798 /* OverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E98F8CFA16D1DAB100718798 /* OverlayWindow.m */; };
+		E98F8CFF16D1DAB100718798 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E98F8CFC16D1DAB100718798 /* ViewController.m */; };
+		E98F8D0116D1DAC000718798 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E98F8D0016D1DAC000718798 /* ViewController.xib */; };
+		E98F8D0B16D1DACA00718798 /* alertView-background-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98F8D0216D1DACA00718798 /* alertView-background-2@2x.png */; };
+		E98F8D0C16D1DACA00718798 /* alertView-button-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98F8D0316D1DACA00718798 /* alertView-button-2@2x.png */; };
+		E98F8D0D16D1DACA00718798 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98F8D0416D1DACA00718798 /* Default-568h@2x.png */; };
+		E98F8D0E16D1DACA00718798 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E98F8D0516D1DACA00718798 /* Default.png */; };
+		E98F8D0F16D1DACA00718798 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98F8D0616D1DACA00718798 /* Default@2x.png */; };
+		E98F8D1016D1DACA00718798 /* UIPopupAlertSheetBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98F8D0716D1DACA00718798 /* UIPopupAlertSheetBackground@2x.png */; };
+		E98F8D1116D1DACA00718798 /* UIPopupAlertSheetButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98F8D0816D1DACA00718798 /* UIPopupAlertSheetButton@2x.png */; };
+		E98F8D1216D1DACA00718798 /* UIPopupAlertSheetButtonPress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98F8D0916D1DACA00718798 /* UIPopupAlertSheetButtonPress@2x.png */; };
+		E98F8D1316D1DACA00718798 /* UIPopupAlertSheetDefaultButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98F8D0A16D1DACA00718798 /* UIPopupAlertSheetDefaultButton@2x.png */; };
+		E98F8D1816D1DAD500718798 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E98F8D1516D1DAD500718798 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E932E29416CBCE89001D70F9 /* TJAlertViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TJAlertViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E932E29716CBCE89001D70F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E932E29916CBCE89001D70F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E932E29B16CBCE89001D70F9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E98F8CDB16D1D92A00718798 /* TJAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJAlertView.m; sourceTree = SOURCE_ROOT; };
+		E98F8CDC16D1D92A00718798 /* TJAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJAlertView.h; sourceTree = SOURCE_ROOT; };
+		E98F8CF716D1DAB100718798 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = TJAlertViewDemo/Classes/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		E98F8CF816D1DAB100718798 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = TJAlertViewDemo/Classes/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		E98F8CF916D1DAB100718798 /* OverlayWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverlayWindow.h; path = TJAlertViewDemo/Classes/OverlayWindow.h; sourceTree = SOURCE_ROOT; };
+		E98F8CFA16D1DAB100718798 /* OverlayWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverlayWindow.m; path = TJAlertViewDemo/Classes/OverlayWindow.m; sourceTree = SOURCE_ROOT; };
+		E98F8CFB16D1DAB100718798 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = TJAlertViewDemo/Classes/ViewController.h; sourceTree = SOURCE_ROOT; };
+		E98F8CFC16D1DAB100718798 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = TJAlertViewDemo/Classes/ViewController.m; sourceTree = SOURCE_ROOT; };
+		E98F8D0016D1DAC000718798 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = TJAlertViewDemo/Resources/Xibs/ViewController.xib; sourceTree = SOURCE_ROOT; };
+		E98F8D0216D1DACA00718798 /* alertView-background-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "alertView-background-2@2x.png"; path = "TJAlertViewDemo/Resources/Images/alertView-background-2@2x.png"; sourceTree = SOURCE_ROOT; };
+		E98F8D0316D1DACA00718798 /* alertView-button-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "alertView-button-2@2x.png"; path = "TJAlertViewDemo/Resources/Images/alertView-button-2@2x.png"; sourceTree = SOURCE_ROOT; };
+		E98F8D0416D1DACA00718798 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "TJAlertViewDemo/Resources/Images/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
+		E98F8D0516D1DACA00718798 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = TJAlertViewDemo/Resources/Images/Default.png; sourceTree = SOURCE_ROOT; };
+		E98F8D0616D1DACA00718798 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "TJAlertViewDemo/Resources/Images/Default@2x.png"; sourceTree = SOURCE_ROOT; };
+		E98F8D0716D1DACA00718798 /* UIPopupAlertSheetBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UIPopupAlertSheetBackground@2x.png"; path = "TJAlertViewDemo/Resources/Images/UIPopupAlertSheetBackground@2x.png"; sourceTree = SOURCE_ROOT; };
+		E98F8D0816D1DACA00718798 /* UIPopupAlertSheetButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UIPopupAlertSheetButton@2x.png"; path = "TJAlertViewDemo/Resources/Images/UIPopupAlertSheetButton@2x.png"; sourceTree = SOURCE_ROOT; };
+		E98F8D0916D1DACA00718798 /* UIPopupAlertSheetButtonPress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UIPopupAlertSheetButtonPress@2x.png"; path = "TJAlertViewDemo/Resources/Images/UIPopupAlertSheetButtonPress@2x.png"; sourceTree = SOURCE_ROOT; };
+		E98F8D0A16D1DACA00718798 /* UIPopupAlertSheetDefaultButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UIPopupAlertSheetDefaultButton@2x.png"; path = "TJAlertViewDemo/Resources/Images/UIPopupAlertSheetDefaultButton@2x.png"; sourceTree = SOURCE_ROOT; };
+		E98F8D1416D1DAD500718798 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "TJAlertViewDemo/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		E98F8D1516D1DAD500718798 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "TJAlertViewDemo/Supporting Files/main.m"; sourceTree = SOURCE_ROOT; };
+		E98F8D1616D1DAD500718798 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = "TJAlertViewDemo/Supporting Files/Prefix.pch"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E932E29116CBCE89001D70F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E932E29816CBCE89001D70F9 /* UIKit.framework in Frameworks */,
+				E932E29A16CBCE89001D70F9 /* Foundation.framework in Frameworks */,
+				E932E29C16CBCE89001D70F9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E932E28B16CBCE89001D70F9 = {
+			isa = PBXGroup;
+			children = (
+				E932E29D16CBCE89001D70F9 /* TJAlertView */,
+				E932E29616CBCE89001D70F9 /* Frameworks */,
+				E932E29516CBCE89001D70F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E932E29516CBCE89001D70F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E932E29416CBCE89001D70F9 /* TJAlertViewDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E932E29616CBCE89001D70F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E932E29716CBCE89001D70F9 /* UIKit.framework */,
+				E932E29916CBCE89001D70F9 /* Foundation.framework */,
+				E932E29B16CBCE89001D70F9 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E932E29D16CBCE89001D70F9 /* TJAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				E98F8CCC16D1D8E100718798 /* Classes */,
+				E98F8CCD16D1D8E600718798 /* Resources */,
+				E932E29E16CBCE89001D70F9 /* Supporting Files */,
+			);
+			path = TJAlertView;
+			sourceTree = "<group>";
+		};
+		E932E29E16CBCE89001D70F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E98F8D1416D1DAD500718798 /* Info.plist */,
+				E98F8D1516D1DAD500718798 /* main.m */,
+				E98F8D1616D1DAD500718798 /* Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E98F8CCC16D1D8E100718798 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E98F8CDA16D1D91A00718798 /* TJAlertView */,
+				E98F8CF716D1DAB100718798 /* AppDelegate.h */,
+				E98F8CF816D1DAB100718798 /* AppDelegate.m */,
+				E98F8CF916D1DAB100718798 /* OverlayWindow.h */,
+				E98F8CFA16D1DAB100718798 /* OverlayWindow.m */,
+				E98F8CFB16D1DAB100718798 /* ViewController.h */,
+				E98F8CFC16D1DAB100718798 /* ViewController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		E98F8CCD16D1D8E600718798 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E98F8CCF16D1D8EC00718798 /* Xibs */,
+				E98F8CCE16D1D8EA00718798 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E98F8CCE16D1D8EA00718798 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E98F8D0216D1DACA00718798 /* alertView-background-2@2x.png */,
+				E98F8D0316D1DACA00718798 /* alertView-button-2@2x.png */,
+				E98F8D0416D1DACA00718798 /* Default-568h@2x.png */,
+				E98F8D0516D1DACA00718798 /* Default.png */,
+				E98F8D0616D1DACA00718798 /* Default@2x.png */,
+				E98F8D0716D1DACA00718798 /* UIPopupAlertSheetBackground@2x.png */,
+				E98F8D0816D1DACA00718798 /* UIPopupAlertSheetButton@2x.png */,
+				E98F8D0916D1DACA00718798 /* UIPopupAlertSheetButtonPress@2x.png */,
+				E98F8D0A16D1DACA00718798 /* UIPopupAlertSheetDefaultButton@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		E98F8CCF16D1D8EC00718798 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				E98F8D0016D1DAC000718798 /* ViewController.xib */,
+			);
+			name = Xibs;
+			sourceTree = "<group>";
+		};
+		E98F8CDA16D1D91A00718798 /* TJAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				E98F8CDC16D1D92A00718798 /* TJAlertView.h */,
+				E98F8CDB16D1D92A00718798 /* TJAlertView.m */,
+			);
+			name = TJAlertView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E932E29316CBCE89001D70F9 /* TJAlertViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E932E2B716CBCE89001D70F9 /* Build configuration list for PBXNativeTarget "TJAlertViewDemo" */;
+			buildPhases = (
+				E932E29016CBCE89001D70F9 /* Sources */,
+				E932E29116CBCE89001D70F9 /* Frameworks */,
+				E932E29216CBCE89001D70F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TJAlertViewDemo;
+			productName = TJAlertView;
+			productReference = E932E29416CBCE89001D70F9 /* TJAlertViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E932E28C16CBCE89001D70F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Thomas Joulin";
+			};
+			buildConfigurationList = E932E28F16CBCE89001D70F9 /* Build configuration list for PBXProject "TJAlertViewDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E932E28B16CBCE89001D70F9;
+			productRefGroup = E932E29516CBCE89001D70F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E932E29316CBCE89001D70F9 /* TJAlertViewDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E932E29216CBCE89001D70F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E98F8D0116D1DAC000718798 /* ViewController.xib in Resources */,
+				E98F8D0B16D1DACA00718798 /* alertView-background-2@2x.png in Resources */,
+				E98F8D0C16D1DACA00718798 /* alertView-button-2@2x.png in Resources */,
+				E98F8D0D16D1DACA00718798 /* Default-568h@2x.png in Resources */,
+				E98F8D0E16D1DACA00718798 /* Default.png in Resources */,
+				E98F8D0F16D1DACA00718798 /* Default@2x.png in Resources */,
+				E98F8D1016D1DACA00718798 /* UIPopupAlertSheetBackground@2x.png in Resources */,
+				E98F8D1116D1DACA00718798 /* UIPopupAlertSheetButton@2x.png in Resources */,
+				E98F8D1216D1DACA00718798 /* UIPopupAlertSheetButtonPress@2x.png in Resources */,
+				E98F8D1316D1DACA00718798 /* UIPopupAlertSheetDefaultButton@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E932E29016CBCE89001D70F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E98F8CDD16D1D92A00718798 /* TJAlertView.m in Sources */,
+				E98F8CFD16D1DAB100718798 /* AppDelegate.m in Sources */,
+				E98F8CFE16D1DAB100718798 /* OverlayWindow.m in Sources */,
+				E98F8CFF16D1DAB100718798 /* ViewController.m in Sources */,
+				E98F8D1816D1DAD500718798 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E932E2B516CBCE89001D70F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E932E2B616CBCE89001D70F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E932E2B816CBCE89001D70F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TJAlertViewDemo/Supporting Files/Prefix.pch";
+				INFOPLIST_FILE = "TJAlertViewDemo/Supporting Files/Info.plist";
+				PRODUCT_NAME = TJAlertViewDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E932E2B916CBCE89001D70F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TJAlertViewDemo/Supporting Files/Prefix.pch";
+				INFOPLIST_FILE = "TJAlertViewDemo/Supporting Files/Info.plist";
+				PRODUCT_NAME = TJAlertViewDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E932E28F16CBCE89001D70F9 /* Build configuration list for PBXProject "TJAlertViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E932E2B516CBCE89001D70F9 /* Debug */,
+				E932E2B616CBCE89001D70F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E932E2B716CBCE89001D70F9 /* Build configuration list for PBXNativeTarget "TJAlertViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E932E2B816CBCE89001D70F9 /* Debug */,
+				E932E2B916CBCE89001D70F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E932E28C16CBCE89001D70F9 /* Project object */;
+}
