@@ -24,6 +24,11 @@
     [alertView show];
 }
 
+- (IBAction)showNativeAlertViewMultipleButtons:(id)sender
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", @"Button 2", @"Button 3", nil];
+    [alertView show];
+}
 
 - (IBAction)showDefaultStyleAlertView:(id)sender
 {
