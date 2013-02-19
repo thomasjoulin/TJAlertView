@@ -121,6 +121,19 @@
     self.messageLabel.frame = (CGRect) { _contentEdgeInsets.left, CGRectGetMaxY(self.titleLabel.frame) + 12.f, self.frame.size.width - _contentEdgeInsets.left - _contentEdgeInsets.right, 36 };
     self.cancelButton.frame = (CGRect) { _contentEdgeInsets.left + buttonEdgeInsets.left, CGRectGetMaxY(self.bounds) - _contentEdgeInsets.bottom - buttonSize.height - buttonEdgeInsets.bottom, buttonSize };
     self.firstOtherButton.frame = (CGRect) { CGRectGetMaxX(self.cancelButton.frame) + buttonSeparatorMargin, self.cancelButton.frame.origin.y, buttonSize };
+
+- (void)setTitle:(NSString *)title
+{
+    _title = title;
+    
+    self.titleLabel.text = title;
+}
+
+- (void)setMessage:(NSString *)message
+{
+    _message = message;
+    
+    self.messageLabel.text = message;
 }
 
 - (void)setContentEdgeInsets:(UIEdgeInsets)contentEdgeInsets

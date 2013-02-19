@@ -14,8 +14,8 @@
 - (void)show;
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated;
 
-@property (nonatomic, strong) NSString      *title;
-@property (nonatomic, strong) NSString      *message;
+@property (nonatomic, copy) NSString      *title;
+@property (nonatomic, copy) NSString      *message;
 
 @property (nonatomic, assign) UIEdgeInsets  contentEdgeInsets;
 
