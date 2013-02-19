@@ -15,6 +15,7 @@
 {
     OverlayWindow    *_window;
     UIImageView      *_backgroundImageView;
+    NSMutableArray   *_otherButtons;
 }
 
 @end
@@ -34,7 +35,28 @@
         
         _window = [[OverlayWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         _window.opaque = NO;
+        
+        if (cancelButtonTitle)
+        {
+            self.cancelButton = [[UIButton alloc] init];
+            [self.cancelButton setTitle:cancelButtonTitle forState:UIControlStateNormal];
+        }
+        
+        if (otherButtonTitles)
+        {
+            _otherButtons = [[NSMutableArray alloc] init];
 
+            va_list args;
+            va_start(args, otherButtonTitles);
+            for (NSString *buttonTitle = otherButtonTitles; buttonTitle != nil; buttonTitle = va_arg(args, NSString *))
+            {
+                UIButton *button = [[UIButton alloc] init];
+                [button setTitle:buttonTitle forState:UIControlStateNormal];
+                [_otherButtons addObject:button];
+            }
+            va_end(args);
+        }
+            
         self.center = _window.center;
         
         [_window addSubview:self];
@@ -47,8 +69,12 @@
 
 - (void)setupView
 {
+    UIImage *defaultButtonBackgroundImage = [[UIImage imageNamed:@"UIPopupAlertSheetDefaultButton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+    UIImage *pressedButtonBackgroundImage = [[UIImage imageNamed:@"UIPopupAlertSheetButtonPress"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+
     _backgroundImageView = [[UIImageView alloc] initWithImage:self.backgroundImage];
     _backgroundImageView.frame = self.bounds;
+    [self addSubview:_backgroundImageView];
 
     self.titleLabel = [[UILabel alloc] init];
     self.titleLabel.text = self.title;
@@ -58,6 +84,7 @@
     self.titleLabel.backgroundColor = [UIColor clearColor];
     self.titleLabel.textColor = [UIColor whiteColor];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:self.titleLabel];
     
     self.messageLabel = [[UILabel alloc] init];
     self.messageLabel.text = self.message;
@@ -67,41 +94,37 @@
     self.messageLabel.backgroundColor = [UIColor clearColor];
     self.messageLabel.textColor = [UIColor whiteColor];
     self.messageLabel.textAlignment = NSTextAlignmentCenter;
-    self.messageLabel.numberOfLines = 2;
-    
-    self.cancelButton = [[UIButton alloc] init];
-    self.firstOtherButton = [[UIButton alloc] init];
-    
-    UIImage *defaultButtonBackgroundImage = [[UIImage imageNamed:@"UIPopupAlertSheetDefaultButton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
-    UIImage *pressedButtonBackgroundImage = [[UIImage imageNamed:@"UIPopupAlertSheetButtonPress"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+    self.messageLabel.numberOfLines = 2;    
+    [self addSubview:self.messageLabel];
 
-    
-    self.cancelButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
-    self.cancelButton.titleLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.8];
-    self.cancelButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
-    self.cancelButton.tag = 0;
-    [self.cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
-    [self.cancelButton setBackgroundImage:defaultButtonBackgroundImage forState:UIControlStateNormal];
-    [self.cancelButton setBackgroundImage:pressedButtonBackgroundImage forState:UIControlStateHighlighted];
-    [self.cancelButton addTarget:self action:@selector(_dismissAlertView:) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.firstOtherButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
-    self.firstOtherButton.titleLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.8];
-    self.firstOtherButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
-    self.firstOtherButton.tag = 1;
-    [self.firstOtherButton setTitle:@"Continue" forState:UIControlStateNormal];
-    [self.firstOtherButton setBackgroundImage:[[UIImage imageNamed:@"UIPopupAlertSheetButton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)] forState:UIControlStateNormal];
-    [self.firstOtherButton setBackgroundImage:pressedButtonBackgroundImage forState:UIControlStateHighlighted];
-    [self.firstOtherButton addTarget:self action:@selector(_dismissAlertView:) forControlEvents:UIControlEventTouchUpInside];
-    
+    if (self.cancelButton)
+    {
+        self.cancelButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+        self.cancelButton.titleLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.8];
+        self.cancelButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+        self.cancelButton.tag = 0;
+        [self.cancelButton setBackgroundImage:defaultButtonBackgroundImage forState:UIControlStateNormal];
+        [self.cancelButton setBackgroundImage:pressedButtonBackgroundImage forState:UIControlStateHighlighted];
+        [self.cancelButton addTarget:self action:@selector(_dismissAlertView:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.cancelButton];
+    }
+
     [self setupSubviewFrames];
 
-    [self addSubview:_backgroundImageView];
-    [self addSubview:self.titleLabel];
-    [self addSubview:self.messageLabel];
-    [self addSubview:self.cancelButton];
-    [self addSubview:self.firstOtherButton];
-    
+    for (UIButton *button in _otherButtons)
+    {
+        button.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+        button.titleLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.8];
+        button.titleLabel.shadowOffset = CGSizeMake(0, -1);
+        // We should not set tag but use indexOfObject in dismissButtonAtIndex:
+        button.tag = [_otherButtons indexOfObject:button];
+        [button setBackgroundImage:[[UIImage imageNamed:@"UIPopupAlertSheetButton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)] forState:UIControlStateNormal];
+        [button setBackgroundImage:pressedButtonBackgroundImage forState:UIControlStateHighlighted];
+        [button addTarget:self action:@selector(_dismissAlertView:) forControlEvents:UIControlEventTouchUpInside];
+
+        [self addSubview:button];
+    }
+
     UIView *v = [[UIView alloc] initWithFrame:CGRectMake(_contentEdgeInsets.left, _contentEdgeInsets.top, self.frame.size.width - _contentEdgeInsets.left - _contentEdgeInsets.right, self.frame.size.height - _contentEdgeInsets.top - _contentEdgeInsets.bottom)];
     v.backgroundColor = [UIColor clearColor];
     v.layer.borderWidth = 1;
@@ -113,14 +136,29 @@
 {
     CGFloat         buttonSeparatorMargin = 8;
     UIEdgeInsets    buttonEdgeInsets = UIEdgeInsetsMake(0, 5, 6, 5);
-    CGSize          buttonSize = (CGSize) { (self.frame.size.width - _contentEdgeInsets.left - _contentEdgeInsets.right - buttonEdgeInsets.left - buttonEdgeInsets.right - buttonSeparatorMargin) / 2, 43 };
     
-    NSLog(@"%@", NSStringFromCGRect(self.frame));
-
     self.titleLabel.frame = (CGRect) { _contentEdgeInsets.left, _contentEdgeInsets.top + 16, self.frame.size.width - _contentEdgeInsets.left - _contentEdgeInsets.right, 18 };
     self.messageLabel.frame = (CGRect) { _contentEdgeInsets.left, CGRectGetMaxY(self.titleLabel.frame) + 12.f, self.frame.size.width - _contentEdgeInsets.left - _contentEdgeInsets.right, 36 };
-    self.cancelButton.frame = (CGRect) { _contentEdgeInsets.left + buttonEdgeInsets.left, CGRectGetMaxY(self.bounds) - _contentEdgeInsets.bottom - buttonSize.height - buttonEdgeInsets.bottom, buttonSize };
-    self.firstOtherButton.frame = (CGRect) { CGRectGetMaxX(self.cancelButton.frame) + buttonSeparatorMargin, self.cancelButton.frame.origin.y, buttonSize };
+
+    if ([_otherButtons count] == 0)
+    {
+        CGSize  buttonSize = (CGSize) { self.frame.size.width - _contentEdgeInsets.left - _contentEdgeInsets.right - buttonEdgeInsets.left - buttonEdgeInsets.right, 43 };
+
+        self.cancelButton.frame = (CGRect) { _contentEdgeInsets.left + buttonEdgeInsets.left, CGRectGetMaxY(self.bounds) - _contentEdgeInsets.bottom - buttonSize.height - buttonEdgeInsets.bottom, buttonSize };
+    }
+    else if ([_otherButtons count] == 1)
+    {
+        UIButton    *button = [_otherButtons objectAtIndex:0];
+        CGSize      buttonSize = (CGSize) { (self.frame.size.width - _contentEdgeInsets.left - _contentEdgeInsets.right - buttonEdgeInsets.left - buttonEdgeInsets.right - buttonSeparatorMargin) / 2, 43 };
+        
+        self.cancelButton.frame = (CGRect) { _contentEdgeInsets.left + buttonEdgeInsets.left, CGRectGetMaxY(self.bounds) - _contentEdgeInsets.bottom - buttonSize.height - buttonEdgeInsets.bottom, buttonSize };
+        button.frame = (CGRect) { CGRectGetMaxX(self.cancelButton.frame) + buttonSeparatorMargin, self.cancelButton.frame.origin.y, buttonSize };
+    }
+    else
+    {
+        
+    }
+}
 
 - (void)setTitle:(NSString *)title
 {

@@ -24,6 +24,13 @@
     [alertView show];
 }
 
+- (IBAction)showNativeAlertViewSingleButton:(id)sender
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    [alertView show];
+}
+
+
 - (IBAction)showNativeAlertViewMultipleButtons:(id)sender
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", @"Button 2", @"Button 3", nil];
@@ -32,7 +39,7 @@
 
 - (IBAction)showDefaultStyleAlertView:(id)sender
 {
-    _alertView = [[TJAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+    _alertView = [[TJAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
     
     [_alertView show];
 }
@@ -70,5 +77,13 @@
 
     [_alertView show];
 }
+
+- (IBAction)showAlertViewSingleButton:(id)sender
+{
+    _alertView = [[TJAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    
+    [_alertView show];
+}
+
 
 @end
