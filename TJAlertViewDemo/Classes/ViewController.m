@@ -20,33 +20,38 @@
 
 - (IBAction)showNativeAlertView:(id)sender
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
     [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"%d", buttonIndex);
 }
 
 - (IBAction)showNativeAlertViewSingleButton:(id)sender
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     [alertView show];
 }
 
 
 - (IBAction)showNativeAlertViewMultipleButtons:(id)sender
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", @"Button 2", @"Button 3", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", @"Button 2", @"Button 3", nil];
     [alertView show];
 }
 
 - (IBAction)showDefaultStyleAlertView:(id)sender
 {
-    _alertView = [[TJAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
+    _alertView = [[TJAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
     
     [_alertView show];
 }
 
 - (IBAction)showCustomStyleAlertView:(id)sender
 {
-    _alertView = [[TJAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+    _alertView = [[TJAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
     
     _alertView.backgroundImage = [[UIImage imageNamed:@"alertView-background-2"] resizableImageWithCapInsets:UIEdgeInsetsMake(5, 6, 6, 6)];
 
@@ -80,7 +85,7 @@
 
 - (IBAction)showAlertViewSingleButton:(id)sender
 {
-    _alertView = [[TJAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    _alertView = [[TJAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     
     [_alertView show];
 }

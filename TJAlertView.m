@@ -30,9 +30,10 @@
     {
         _title = title;
         _message = message;
+        _delegate = delegate;
         
         _contentEdgeInsets = UIEdgeInsetsMake(3, 6, 10, 6);
-        
+
         _window = [[OverlayWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         _window.opaque = NO;
         
@@ -105,7 +106,7 @@
         self.cancelButton.tag = 0;
         [self.cancelButton setBackgroundImage:defaultButtonBackgroundImage forState:UIControlStateNormal];
         [self.cancelButton setBackgroundImage:pressedButtonBackgroundImage forState:UIControlStateHighlighted];
-        [self.cancelButton addTarget:self action:@selector(_dismissAlertView:) forControlEvents:UIControlEventTouchUpInside];
+        [self.cancelButton addTarget:self action:@selector(_buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.cancelButton];
     }
 
@@ -114,13 +115,16 @@
     for (UIButton *button in _otherButtons)
     {
         button.titleLabel.font = [UIFont boldSystemFontOfSize:18];
-        button.titleLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.8];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor colorWithWhite:1 alpha:0.5] forState:UIControlStateDisabled];
+        [button setTitleShadowColor:[UIColor colorWithWhite:0 alpha:0.8] forState:UIControlStateNormal];
+        [button setTitleShadowColor:[UIColor clearColor] forState:UIControlStateDisabled];
         button.titleLabel.shadowOffset = CGSizeMake(0, -1);
         // We should not set tag but use indexOfObject in dismissButtonAtIndex:
-        button.tag = [_otherButtons indexOfObject:button];
+        button.tag = [_otherButtons indexOfObject:button] + 1;
         [button setBackgroundImage:[[UIImage imageNamed:@"UIPopupAlertSheetButton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)] forState:UIControlStateNormal];
         [button setBackgroundImage:pressedButtonBackgroundImage forState:UIControlStateHighlighted];
-        [button addTarget:self action:@selector(_dismissAlertView:) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(_buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
 
         [self addSubview:button];
     }
@@ -130,6 +134,11 @@
     v.layer.borderWidth = 1;
     v.layer.borderColor = [UIColor redColor].CGColor;
 //    [self addSubview:v];
+}
+
+- (UIButton *)firstOtherButton
+{
+    return [_otherButtons objectAtIndex:0];
 }
 
 - (void)setupSubviewFrames
@@ -213,6 +222,24 @@
     self.transform = CGAffineTransformMakeScale(0.4, 0.4);
     self.alpha = 0;
 
+    if ([_otherButtons count])
+    {
+        UIButton *button = [_otherButtons objectAtIndex:0];
+        BOOL     enabled = YES;
+        
+        if ([self.delegate respondsToSelector:@selector(alertViewShouldEnableFirstOtherButton:)])
+        {
+            enabled = [self.delegate alertViewShouldEnableFirstOtherButton:(UIAlertView *)self];
+        }
+
+        button.enabled = enabled;
+    }
+
+    if ([self.delegate respondsToSelector:@selector(willPresentAlertView:)])
+    {
+        [self.delegate willPresentAlertView:(UIAlertView *)self];
+    }
+
     [UIView
         animateWithDuration:keyframeDuration animations:^
         {
@@ -232,24 +259,46 @@
                         animateWithDuration:keyframeDuration / 2 animations:^
                         {
                             self.transform = CGAffineTransformMakeScale(1, 1);
+                        }
+                        completion:^(BOOL finished)
+                        {
+                            if ([self.delegate respondsToSelector:@selector(didPresentAlertView:)])
+                            {
+                                [self.delegate didPresentAlertView:(UIAlertView *)self];
+                            }
                         }];
                 }];
         }];
 }
 
-- (void)_dismissAlertView:(UIButton *)clickedButton
+- (void)_buttonPressed:(UIButton *)pressedButton
 {
-    [self dismissWithClickedButtonIndex:clickedButton.tag animated:YES];
+    [self dismissWithClickedButtonIndex:pressedButton.tag animated:YES];
+    
+    if ([self.delegate respondsToSelector:@selector(alertView:clickedButtonAtIndex:)])
+    {
+        [self.delegate alertView:(UIAlertView *)self clickedButtonAtIndex:pressedButton.tag];
+    }
 }
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated
 {
+    if ([self.delegate respondsToSelector:@selector(alertView:willDismissWithButtonIndex:)])
+    {
+        [self.delegate alertView:(UIAlertView *)self willDismissWithButtonIndex:buttonIndex];
+    }
+
     [UIView animateWithDuration:0.25 / 2.f
                      animations:^{
                          self.alpha = 0;
                      } completion:^(BOOL finished) {
                          [_window resignKeyWindow];
                          _window = nil;
+                         
+                         if ([self.delegate respondsToSelector:@selector(alertView:didDismissWithButtonIndex:)])
+                         {
+                             [self.delegate alertView:(UIAlertView *)self didDismissWithButtonIndex:buttonIndex];
+                         }
                      }];
 }
 
