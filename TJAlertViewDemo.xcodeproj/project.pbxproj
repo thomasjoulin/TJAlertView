@@ -26,6 +26,7 @@
 		E98F8D1316D1DACA00718798 /* UIPopupAlertSheetDefaultButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98F8D0A16D1DACA00718798 /* UIPopupAlertSheetDefaultButton@2x.png */; };
 		E98F8D1816D1DAD500718798 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E98F8D1516D1DAD500718798 /* main.m */; };
 		E98F8D1A16D336A800718798 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98F8D1916D336A800718798 /* QuartzCore.framework */; };
+		E98F8D1C16D365EB00718798 /* alertView-button-2-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98F8D1B16D365EB00718798 /* alertView-button-2-highlighted@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		E98F8D1516D1DAD500718798 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "TJAlertViewDemo/Supporting Files/main.m"; sourceTree = SOURCE_ROOT; };
 		E98F8D1616D1DAD500718798 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = "TJAlertViewDemo/Supporting Files/Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		E98F8D1916D336A800718798 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E98F8D1B16D365EB00718798 /* alertView-button-2-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "alertView-button-2-highlighted@2x.png"; path = "TJAlertViewDemo/Resources/Images/alertView-button-2-highlighted@2x.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				E98F8D0216D1DACA00718798 /* alertView-background-2@2x.png */,
 				E98F8D0316D1DACA00718798 /* alertView-button-2@2x.png */,
+				E98F8D1B16D365EB00718798 /* alertView-button-2-highlighted@2x.png */,
 				E98F8D0416D1DACA00718798 /* Default-568h@2x.png */,
 				E98F8D0516D1DACA00718798 /* Default.png */,
 				E98F8D0616D1DACA00718798 /* Default@2x.png */,
@@ -237,6 +240,7 @@
 				E98F8D1116D1DACA00718798 /* UIPopupAlertSheetButton@2x.png in Resources */,
 				E98F8D1216D1DACA00718798 /* UIPopupAlertSheetButtonPress@2x.png in Resources */,
 				E98F8D1316D1DACA00718798 /* UIPopupAlertSheetDefaultButton@2x.png in Resources */,
+				E98F8D1C16D365EB00718798 /* alertView-button-2-highlighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

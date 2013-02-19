@@ -90,7 +90,7 @@
     self.firstOtherButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
     self.firstOtherButton.tag = 1;
     [self.firstOtherButton setTitle:@"Continue" forState:UIControlStateNormal];
-    [self.firstOtherButton setBackgroundImage:self.buttonBackgroundImage forState:UIControlStateNormal];
+    [self.firstOtherButton setBackgroundImage:[[UIImage imageNamed:@"UIPopupAlertSheetButton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)] forState:UIControlStateNormal];
     [self.firstOtherButton setBackgroundImage:pressedButtonBackgroundImage forState:UIControlStateHighlighted];
     [self.firstOtherButton addTarget:self action:@selector(_dismissAlertView:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -147,14 +147,9 @@
     _backgroundImageView.image = backgroundImage;
 }
 
-- (UIImage *)buttonBackgroundImage
+- (void)setButtonBackgroundImage:(UIImage *)buttonBackgroundImage
 {
-    if (!_buttonBackgroundImage)
-    {
-        _buttonBackgroundImage = [[UIImage imageNamed:@"UIPopupAlertSheetButton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
-    }
     
-    return _buttonBackgroundImage;
 }
 
 - (void)show

@@ -20,7 +20,6 @@
 @property (nonatomic, assign) UIEdgeInsets  contentEdgeInsets;
 
 @property (nonatomic, strong) UIImage       *backgroundImage;
-@property (nonatomic, strong) UIImage       *buttonBackgroundImage;
 
 @property (nonatomic, strong) UILabel       *titleLabel;
 @property (nonatomic, strong) UILabel       *messageLabel;
