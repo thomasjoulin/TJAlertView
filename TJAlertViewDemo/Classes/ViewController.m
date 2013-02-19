@@ -20,13 +20,8 @@
 
 - (IBAction)showNativeAlertView:(id)sender
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
     [alertView show];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSLog(@"%d", buttonIndex);
 }
 
 - (IBAction)showNativeAlertViewSingleButton:(id)sender

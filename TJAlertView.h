@@ -17,6 +17,8 @@
 @property (nonatomic, copy) NSString        *title;
 @property (nonatomic, copy) NSString        *message;
 
+@property (nonatomic, readonly) NSInteger   numberOfButtons;
+
 @property (nonatomic, assign) UIEdgeInsets  contentEdgeInsets;
 
 @property (nonatomic, strong) UIImage       *backgroundImage;

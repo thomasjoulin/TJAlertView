@@ -37,11 +37,8 @@
         _window = [[OverlayWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         _window.opaque = NO;
         
-        if (cancelButtonTitle)
-        {
-            self.cancelButton = [[UIButton alloc] init];
-            [self.cancelButton setTitle:cancelButtonTitle forState:UIControlStateNormal];
-        }
+        self.cancelButton = [[UIButton alloc] init];
+        [self.cancelButton setTitle:cancelButtonTitle ? cancelButtonTitle : @"Cancel" forState:UIControlStateNormal];
         
         if (otherButtonTitles)
         {
@@ -139,6 +136,11 @@
 - (UIButton *)firstOtherButton
 {
     return [_otherButtons objectAtIndex:0];
+}
+
+- (NSInteger)numberOfButtons
+{
+    return [_otherButtons count] + 1;
 }
 
 - (void)setupSubviewFrames
