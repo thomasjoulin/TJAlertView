@@ -143,6 +143,22 @@
     return [_otherButtons count] + 1;
 }
 
+- (NSString *)buttonTitleAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        return [self.cancelButton titleForState:UIControlStateNormal];
+    }
+    else if (buttonIndex <= [_otherButtons count])
+    {
+        UIButton *button = [_otherButtons objectAtIndex:buttonIndex - 1];
+        
+        return [button titleForState:UIControlStateNormal];
+    }
+    
+    return nil;
+}
+
 - (void)setupSubviewFrames
 {
     CGFloat         buttonSeparatorMargin = 8;

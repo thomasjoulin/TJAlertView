@@ -11,6 +11,7 @@
 - (id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 - (void)show;
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated;
+- (NSString *)buttonTitleAtIndex:(NSInteger)buttonIndex;
 
 @property (nonatomic, assign) id<UIAlertViewDelegate> delegate;
 
