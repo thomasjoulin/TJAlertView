@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSString      *title;
 @property (nonatomic, strong) NSString      *message;
 
+@property (nonatomic, assign) UIEdgeInsets  contentEdgeInsets;
+
 @property (nonatomic, strong) UIImage       *backgroundImage;
 @property (nonatomic, strong) UIImage       *buttonBackgroundImage;
 

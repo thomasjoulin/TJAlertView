@@ -54,6 +54,7 @@
     _alertView.firstOtherButton.titleLabel.shadowOffset = CGSizeMake(0, 1);
     _alertView.firstOtherButton.titleLabel.textColor = [UIColor colorWithRed:115.f/255.f green:115.f/255.f blue:115.f/255.f alpha:1];
     _alertView.firstOtherButton.titleLabel.shadowColor = [UIColor whiteColor];
+    _alertView.contentEdgeInsets = UIEdgeInsetsMake(2, 3, 3, 3);
     
     [_alertView show];
 }
