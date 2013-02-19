@@ -25,6 +25,7 @@
 		E98F8D1216D1DACA00718798 /* UIPopupAlertSheetButtonPress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98F8D0916D1DACA00718798 /* UIPopupAlertSheetButtonPress@2x.png */; };
 		E98F8D1316D1DACA00718798 /* UIPopupAlertSheetDefaultButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98F8D0A16D1DACA00718798 /* UIPopupAlertSheetDefaultButton@2x.png */; };
 		E98F8D1816D1DAD500718798 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E98F8D1516D1DAD500718798 /* main.m */; };
+		E98F8D1A16D336A800718798 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98F8D1916D336A800718798 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		E98F8D1416D1DAD500718798 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "TJAlertViewDemo/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		E98F8D1516D1DAD500718798 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "TJAlertViewDemo/Supporting Files/main.m"; sourceTree = SOURCE_ROOT; };
 		E98F8D1616D1DAD500718798 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = "TJAlertViewDemo/Supporting Files/Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		E98F8D1916D336A800718798 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E98F8D1A16D336A800718798 /* QuartzCore.framework in Frameworks */,
 				E932E29816CBCE89001D70F9 /* UIKit.framework in Frameworks */,
 				E932E29A16CBCE89001D70F9 /* Foundation.framework in Frameworks */,
 				E932E29C16CBCE89001D70F9 /* CoreGraphics.framework in Frameworks */,
@@ -89,6 +92,7 @@
 		E932E29616CBCE89001D70F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E98F8D1916D336A800718798 /* QuartzCore.framework */,
 				E932E29716CBCE89001D70F9 /* UIKit.framework */,
 				E932E29916CBCE89001D70F9 /* Foundation.framework */,
 				E932E29B16CBCE89001D70F9 /* CoreGraphics.framework */,

@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Thomas Joulin. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "TJAlertView.h"
 #import "OverlayWindow.h"
 
@@ -101,6 +103,12 @@
     [self addSubview:self.messageLabel];
     [self addSubview:self.cancelButton];
     [self addSubview:self.firstOtherButton];
+    
+//    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(_edgeInsets.left, _edgeInsets.top, self.frame.size.width - _edgeInsets.left - _edgeInsets.right, self.frame.size.height - _edgeInsets.top - _edgeInsets.bottom)];
+//    v.backgroundColor = [UIColor clearColor];
+//    v.layer.borderWidth = 1;
+//    v.layer.borderColor = [UIColor redColor].CGColor;
+//    [self addSubview:v];
 }
 
 - (UIImage *)backgroundImage
