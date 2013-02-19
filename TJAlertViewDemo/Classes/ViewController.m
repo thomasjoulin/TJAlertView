@@ -41,7 +41,7 @@
 {
     _alertView = [[TJAlertView alloc] initWithTitle:@"Alert Label" message:@"Tap Continue and sign in to view account information" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
     
-    _alertView.backgroundImage = [[UIImage imageNamed:@"alertView-background-2"] resizableImageWithCapInsets:UIEdgeInsetsMake(5, 6, 23, 6)];
+    _alertView.backgroundImage = [[UIImage imageNamed:@"alertView-background-2"] resizableImageWithCapInsets:UIEdgeInsetsMake(5, 6, 6, 6)];
     _alertView.buttonBackgroundImage = [[UIImage imageNamed:@"alertView-button-2"] resizableImageWithCapInsets:UIEdgeInsetsMake(8, 3, 4, 3)];
     _alertView.titleLabel.textColor = [UIColor colorWithRed:115.f/255.f green:115.f/255.f blue:115.f/255.f alpha:1];
     _alertView.titleLabel.shadowColor = [UIColor whiteColor];
