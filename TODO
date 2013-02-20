@@ -4,9 +4,6 @@
   	- alertViewStyle  property
   	- visible  property
 	– addButtonWithTitle:
-  	- numberOfButtons  property
-	– buttonTitleAtIndex:
 	– textFieldAtIndex:
   	- cancelButtonIndex  property
   	- firstOtherButtonIndex  property
-	– dismissWithClickedButtonIndex:animated:
